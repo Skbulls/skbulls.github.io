@@ -241,21 +241,26 @@
   </div>
 
   <script>
-    // Top link text replacement
+   
     const topEmail = document.getElementById('top-email');
     topEmail.addEventListener('click', function(e) {
       e.preventDefault();
-      // Only animate if it still says "email"
-      if (this.textContent === 'email') {
-        this.style.opacity = '0';
-        setTimeout(() => {
+      
+   
+      this.style.opacity = '0';
+      
+     
+      setTimeout(() => {
+        if (this.textContent === 'email') {
           this.textContent = 'skbulusu@gmail.com';
-          this.style.opacity = '1';
-        }, 150); // Matches the CSS transition time
-      }
+        } else {
+          this.textContent = 'email';
+        }
+        this.style.opacity = '1';
+      }, 150); 
     });
 
-    // Say Hi smooth expand toggle
+    
     const sayHiToggle = document.getElementById('say-hi-toggle');
     const emailExpand = document.getElementById('email-expand');
     sayHiToggle.addEventListener('click', function(e) {
