@@ -1,1 +1,1 @@
-The personal website of Sai Karthik Venkata Bulusu.
+The personal website of Sai Karthik Bulusu
