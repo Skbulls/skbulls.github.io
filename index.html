@@ -6,46 +6,119 @@
 <title>Sai Karthik</title>
 
 <style>
+  :root {
+    --bg-color: #f7f7f7;
+    --text-color: #222222;
+    --muted-color: #777777;
+    --border-color: #cccccc;
+  }
+
   body {
     margin: 0;
-    background: #ffffff;
-    color: #111;
-    font-family: ui-serif, Georgia, serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    /* Monospace font stack to match the target site */
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 14.5px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
   }
 
   .wrap {
-    max-width: 680px;
+    max-width: 640px;
     margin: 90px auto;
     padding: 0 24px;
   }
 
-  .name {
-    font-size: 26px;
-    font-weight: 400;
-    margin-bottom: 18px;
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: #000;
+    letter-spacing: 0.5px;
   }
 
-  .text {
-    font-size: 15.5px;
-    line-height: 1.65;
-    margin-bottom: 16px;
+  .links {
+    color: var(--muted-color);
+    margin-bottom: 45px;
   }
 
-  a {
-    color: #0645ad;
+  /* Target site uses custom underlines for emphasis */
+  .underline {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--text-color);
+    color: var(--text-color);
+  }
+
+  .underline:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  .links a {
+    color: var(--muted-color);
     text-decoration: none;
   }
 
-  a:hover {
+  .links a:hover {
     text-decoration: underline;
+    text-underline-offset: 4px;
   }
 
-  .spacer {
-    height: 14px;
+  p {
+    margin: 0 0 22px 0;
   }
 
-  .small {
+  /* Section headers like "now" and "selected work" */
+  .section-title {
+    margin-top: 55px;
+    margin-bottom: 20px;
+    color: var(--muted-color);
+    font-weight: 700;
     font-size: 14.5px;
+  }
+
+  /* Styling for the items */
+  .item {
+    margin-bottom: 24px;
+  }
+
+  .item-title {
+    font-weight: 700;
+  }
+
+  /* The grey outlined box for tags */
+  .badge {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--muted-color);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding: 1px 6px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: normal;
+  }
+
+  .item-desc {
+    margin-top: 4px;
+  }
+
+  /* Layout for items with bullets (like his selected work section) */
+  .list-item {
+    display: flex;
+    margin-bottom: 24px;
+  }
+
+  .list-bullet {
+    margin-right: 12px;
+    color: var(--border-color);
+    font-weight: bold;
+  }
+
+  .list-content {
+    flex: 1;
   }
 </style>
 </head>
@@ -53,24 +126,68 @@
 <body>
   <div class="wrap">
 
-    <div class="name">Sai Karthik</div>
+    <h1>Sai Karthik</h1>
 
-    <div class="text">
-      I'm a rising senior at Mission Early College High School working across computational neuroscience, engineering, and robotics.
+    <div class="links">
+      Location · [<a href="#">linkedin</a>] · [<a href="#">email</a>]
     </div>
 
-    <div class="text">
-      I'm currently a research intern at the Dettmer Lab in Harvard Medical School studying alpha-synuclein inclusions in Parkinson's disease.
-      I also conduct independent research under Dr. Gaurav Sharma on aptamer effects in high-grade meningioma, and work as a machine learning developer at Evodyne Robotics.
-      Previously, I was a full-stack intern at NASA Ames Research Center.
+    <p>
+      I'm a rising senior at Mission Early College High School working across computational neuroscience, engineering, and robotics. I also conduct independent research under Dr. Gaurav Sharma on aptamer effects in high-grade meningioma.
+    </p>
+
+    <p>
+      Outside research, I volunteer at Chabot Space & Science Center and build <a href="#" class="underline">NeuroTunes</a>, a neurological music therapy platform.
+    </p>
+
+    <p>
+      Always happy to chat — <a href="#" class="underline">say hi!</a>
+    </p>
+
+    <div class="section-title">now</div>
+
+    <div class="item">
+      <div class="item-title">
+        Harvard Medical School <span class="badge">current</span>
+      </div>
+      <div class="item-desc">
+        Research intern at the Dettmer Lab studying alpha-synuclein inclusions in Parkinson's disease.
+      </div>
     </div>
 
-    <div class="text">
-      Outside research, I volunteer at Chabot Space & Science Center and build NeuroTunes, a neurological music therapy platform.
+    <div class="item">
+      <div class="item-title">
+        Evodyne Robotics <span class="badge">current</span>
+      </div>
+      <div class="item-desc">
+        Machine learning developer.
+      </div>
     </div>
 
-    <div class="text">
-      Previously, I worked on ImmersifyVR and at iStartValley focusing on research, trend analysis, and startup ideation.
+    <div class="section-title">previously</div>
+
+    <div class="list-item">
+      <div class="list-bullet">·</div>
+      <div class="list-content">
+        <div class="item-title">
+          NASA Ames Research Center <span class="badge">intern</span>
+        </div>
+        <div class="item-desc">
+          Full-stack intern.
+        </div>
+      </div>
+    </div>
+
+    <div class="list-item">
+      <div class="list-bullet">·</div>
+      <div class="list-content">
+        <div class="item-title">
+          ImmersifyVR & iStartValley
+        </div>
+        <div class="item-desc">
+          Focused on research, trend analysis, and startup ideation.
+        </div>
+      </div>
     </div>
 
   </div>
